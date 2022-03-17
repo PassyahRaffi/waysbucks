@@ -1,86 +1,86 @@
-const { tb_user, tb_profile } = require('../../models')
+const { tb_user, tb_profile } = require("../../models");
 
 exports.addUsers = async (req, res) => {
-    try {
-        await tb_user.create(req.body);
-    
-        res.send({
-            status: "success",
-            message: "Add user finished",
-        });
-    } catch (error) {
-        console.log(error);
-        res.send({
-            status: "failed",
-            message: "Server Error",
-        });
-    }
+  try {
+    await tb_user.create(req.body);
+
+    res.send({
+      status: "success",
+      message: "Add user finished",
+    });
+  } catch (error) {
+    console.log(error);
+    res.send({
+      status: "failed",
+      message: "Server Error",
+    });
+  }
 };
 
 exports.getUsers = async (req, res) => {
-    try {
-        const users = await tb_user.findAll({
-            include: {
-                model: tb_profile,
-                as: "profile",
-                attributes: {
-                exclude: ["createdAt", "updatedAt", "idUser"],
-                },
-            },
-            attributes: {
-                exclude: ["password", "createdAt", "updatedAt"],
-            },
-        });
+  try {
+    const users = await tb_user.findAll({
+      include: {
+        model: tb_profile,
+        as: "profile",
+        attributes: {
+          exclude: ["createdAt", "updatedAt", "idUser"],
+        },
+      },
+      attributes: {
+        exclude: ["password", "createdAt", "updatedAt"],
+      },
+    });
 
-        res.send({
-            status: "success",
-            data: {
-                users,
-            },
-        });
-    } catch (error) {
-        console.log(error);
-        res.send({
-        status: "failed",
-        message: "Server Error",
-        });
-    }
+    res.send({
+      status: "success",
+      data: {
+        users,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+    res.send({
+      status: "failed",
+      message: "Server Error",
+    });
+  }
 };
 
 exports.getUser = async (req, res) => {
-    try {
-      const { id } = req.params;
-  
-      const data = await tb_user.findOne({
-        where: {
-          id,
-        },
-        include: {
-          model: tb_profile,
-          as: "profile",
-          attributes: {
-            exclude: ["id", "createdAt", "updatedAt"],
-          },
-        },
+  try {
+    const { id } = req.params;
+
+    const data = await tb_user.findOne({
+      where: {
+        id,
+      },
+      include: {
+        model: tb_profile,
+        as: "profile",
         attributes: {
-          exclude: ["password", "createdAt", "updatedAt"],
+          exclude: ["id", "createdAt", "updatedAt"],
         },
-      });
-  
-      res.send({
-        status: "success",
-        data: {
-          user: data,
-        },
-      });
-    } catch (error) {
-      console.log(error);
-      res.send({
-        status: "failed",
-        message: "Server Error",
-      });
-    }
-  };
+      },
+      attributes: {
+        exclude: ["password", "createdAt", "updatedAt"],
+      },
+    });
+
+    res.send({
+      status: "success",
+      data: {
+        user: data,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+    res.send({
+      status: "failed",
+      message: "Server Error",
+    });
+  }
+};
 
 exports.updateUser = async (req, res) => {
   try {

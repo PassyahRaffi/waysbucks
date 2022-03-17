@@ -13,11 +13,10 @@ const { addTopping, getToppings, getTopping, updateTopping, deleteTopping } = re
 const { addOrder, getOrders, updateOrder, deleteOrder, getProcessOrders, getSuccessOrders } = require('../controllers/order')
 const { addTransaction, getTransactions, getTransaction, updateTransaction, cancelTransaction, finishTransaction } = require('../controllers/transaction')
 
-
 router.post('/user', addUsers)
 router.get('/users', getUsers)
 router.get('/user/:id', getUser)
-router.patch('/user/:id', updateUser)
+router.patch('/user/:id', auth, updateUser)
 router.delete('/user/:id', deleteUser)
 
 router.post('/register', register)
