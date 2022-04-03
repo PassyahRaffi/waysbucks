@@ -1,5 +1,5 @@
 {
-  "name": "waysbucks-api",
+  "name": "server--waysbucks",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
