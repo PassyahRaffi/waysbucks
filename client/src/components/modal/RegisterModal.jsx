@@ -1,10 +1,7 @@
 import React, { useState, useContext } from "react";
-import { LockClosedIcon } from "@heroicons/react/solid";
 import { API } from "../../config/api";
 
 import { RegisteredContext } from "../../contexts/AuthContext";
-
-import { LogoWhite } from "../../exports/exportImages";
 
 export default function RegisterModal() {
   const [registered, setRegistered] = useContext(RegisteredContext);
@@ -95,7 +92,6 @@ export default function RegisterModal() {
   return (
     <>
       <div>
-        <img className="mx-auto h-12 w-auto" src={LogoWhite} alt="Workflow" />
         <h2 className="mt-6 text-center text-3xl font-extrabold text-brand-red">
           Register
         </h2>
@@ -157,21 +153,17 @@ export default function RegisterModal() {
             className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-brand-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-              <LockClosedIcon
-                className="h-5 w-5 text-red-500 group-hover:text-red-400"
-                aria-hidden="true"
-              />
             </span>
             Sign Up
           </button>
           <p className="font-['Avenir-Book'] mt-3">
-            Already have an account?{" "}
+            Already have an account? Click {" "}
             <button
               type="button"
               className="font-bold"
               onClick={() => setRegistered(!registered)}
             >
-              Click Here
+              Here
             </button>
           </p>
         </div>

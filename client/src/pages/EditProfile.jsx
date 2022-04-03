@@ -109,7 +109,7 @@ export default function EditProfile() {
           type="submit"
           className="w-full py-2 rounded-md text-white text-center bg-brand-red"
         >
-          Save Changes
+          Save Profile Changes
         </button>
         {message && message}
       </form>

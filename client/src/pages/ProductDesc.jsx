@@ -30,15 +30,15 @@ export default function ProductDesc({ item }) {
   const [order, setOrder] = useContext(OrderContext);
   const [state, dispatch] = useContext(UserContext);
 
-  const decrement = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
+  // const decrement = () => {
+  //   if (quantity > 1) {
+  //     setQuantity(quantity - 1);
+  //   }
+  // };
 
-  const increment = () => {
-    setQuantity(quantity + 1);
-  };
+  // const increment = () => {
+  //   setQuantity(quantity + 1);
+  // };
 
   const getOrders = async () => {
     try {
@@ -130,7 +130,7 @@ export default function ProductDesc({ item }) {
           <img
             src={uploads + product.image}
             alt="product"
-            className="w-full lg:w-96 rounded-2xl"
+            className="w-full lg:w-full px-12 rounded-2xl"
           />
         </div>
         <div className="text w-full lg:w-7/12">
@@ -196,7 +196,7 @@ export default function ProductDesc({ item }) {
               ))}
             </form>
           </div>
-          <div className="text-center mb-4">
+          <div className="text-center inset-x-0 bottom-0 lg:h-12">
             {/* <button
               type="button"
               onClick={decrement}

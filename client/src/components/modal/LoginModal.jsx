@@ -1,13 +1,11 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { LockClosedIcon } from "@heroicons/react/solid";
 import { API } from "../../config/api";
 
 import { AdminContext, RegisteredContext } from "../../contexts/AuthContext";
 import { ModalContext } from "../../contexts/ModalContext";
 import { UserContext } from "../../contexts/UserContext";
 
-import { LogoWhite } from "../../exports/exportImages";
 
 export default function LoginModal() {
   let navigate = useNavigate();
@@ -84,7 +82,6 @@ export default function LoginModal() {
   return (
     <>
       <div>
-        <img className="mx-auto h-12 w-auto" src={LogoWhite} alt="Workflow" />
         <h2 className="mt-6 text-center text-3xl font-extrabold text-brand-red">
           Login
         </h2>
@@ -125,21 +122,17 @@ export default function LoginModal() {
         <div className="text-center">
           <button className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-brand-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-              <LockClosedIcon
-                className="h-5 w-5 text-red-500 group-hover:text-red-400"
-                aria-hidden="true"
-              />
             </span>
             Login
           </button>
           <p className="font-['Avenir-Book'] mt-3">
-            Don't have an account?{" "}
+            Don't have an account? Click {" "}
             <button
               type="button"
               className="font-bold"
               onClick={() => setRegistered(!registered)}
             >
-              Click Here
+              Here
             </button>
           </p>
         </div>

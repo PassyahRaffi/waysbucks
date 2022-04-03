@@ -18,7 +18,7 @@ export default function AddTopping() {
     image: "",
   });
 
-  const { title, price, image } = form;
+  const { title, price } = form;
 
   // Handle change data on form
   const handleChange = (e) => {

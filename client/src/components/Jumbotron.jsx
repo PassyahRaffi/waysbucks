@@ -22,14 +22,14 @@ function Jumbotron() {
         <img
           src={JumbotronBg}
           alt="jumbotron"
-          className="opacity-0 lg:opacity-100"
+          className="opacity-0 lg:opacity-100 w-9/12"
         />
         <img
           src={JumbotronImg}
           alt="jumbotron-img"
-          className="absolute brightness-50 lg:brightness-100 lg:right-0 top-10"
+          className="absolute brightness-50 lg:brightness-100 lg:right-0 lg:top-12 lg:h-4/5"
         />
-        <div className="text-white absolute top-16 left-2 lg:left-14 lg:w-1/2">
+        <div className="text-white absolute top-28 left-2 lg:left-20 lg:w-1/2">
           <h3 className="font-['Freight'] text-4xl lg:text-6xl mb-1 lg:mb-4 uppercase">
             Waysbucks
           </h3>

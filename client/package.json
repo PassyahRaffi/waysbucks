@@ -1,5 +1,5 @@
 {
-  "name": "waybucks-app",
+  "name": "client--waybucks",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

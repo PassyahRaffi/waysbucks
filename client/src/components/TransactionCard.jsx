@@ -21,13 +21,13 @@ export default function TransactionCard() {
   const [open, setOpen] = useContext(TransactionModalContext);
 
   function checkStatus(status) {
-    if (status == "Waiting Approve") {
+    if (status === "Waiting Approve") {
       return "text-yellow-500 bg-yellow-100";
-    } else if (status == "Success") {
+    } else if (status === "Success") {
       return "text-green-500 bg-green-200";
-    } else if (status == "Cancel") {
+    } else if (status === "Cancel") {
       return "text-red-500 bg-red-200";
-    } else if (status == "On The Way") {
+    } else if (status === "On The Way") {
       return "text-cyan-500 bg-cyan-200";
     }
   }

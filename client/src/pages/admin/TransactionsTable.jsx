@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import formatThousands from "format-thousands";
-import { Link } from "react-router-dom";
 import { API } from "../../config/api";
 
 import TransactionModal from "../../components/modal/TransactionModal";
@@ -81,19 +80,19 @@ export default function TransactionsTable() {
   };
 
   function checkStatus(status) {
-    if (status == "Waiting Approve") {
+    if (status === "Waiting Approve") {
       return "text-yellow-500";
-    } else if (status == "Success") {
+    } else if (status === "Success") {
       return "text-green-500";
-    } else if (status == "Cancel") {
+    } else if (status === "Cancel") {
       return "text-red-500";
-    } else if (status == "On The Way") {
+    } else if (status === "On The Way") {
       return "text-cyan-500";
     }
   }
 
   function checkAction(status, id) {
-    if (status == "Waiting Approve") {
+    if (status === "Waiting Approve") {
       return (
         <>
           <button
@@ -112,19 +111,19 @@ export default function TransactionsTable() {
           </button>
         </>
       );
-    } else if (status == "Success") {
+    } else if (status === "Success") {
       return (
         <>
           <img src={ConfirmIcon} alt="" />
         </>
       );
-    } else if (status == "Cancel") {
+    } else if (status === "Cancel") {
       return (
         <>
           <img src={CancelIcon} alt="" />
         </>
       );
-    } else if (status == "On The Way") {
+    } else if (status === "On The Way") {
       return (
         <>
           <img src={ConfirmIcon} alt="" />
